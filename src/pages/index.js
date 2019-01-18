@@ -6,23 +6,28 @@ import { Link, StaticQuery, graphql } from 'gatsby'
 export default ({ data }) => {
   return (
     <div>
-      <h1>Test Blog</h1>
       {data.allContentfulBlogPost.edges.map(({ node }) => (
         <div key={node.id}>
           <h3>
             {node.title} 
           </h3>
-          <small>Created on {node.date}</small><br/>
-          <Img fixed={node.image.fixed}/><br/>
           <br/>
           <br/>
           <h3>{node.content.content}</h3>
           <br/>
+          <Img fixed={node.image.fixed} /><br />
           <br/>
-          <small>Created by{node.authorName[0].name}</small>
+          <small>Created by {node.authorName[0].name}</small>
+          <br/>
+          <br/>
+          <small>Created on {node.date}</small><br />
+          <br />
+          <br/>
         </div>
       ))}
+
     </div>
+ 
   )
 }
 
