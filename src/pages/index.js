@@ -19,7 +19,7 @@ export default ({ data }) => {
           <h3>{node.content.content}</h3>
           <br/>
           <br/>
-          <small>Created by{node.authorName[0].name}</small>
+          <small>Created by {node.authorName[0].name}</small>
         </div>
       ))}
     </div>
