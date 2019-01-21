@@ -1,9 +1,7 @@
-import React, { Fragment, Component } from 'react'
-import Img from 'gatsby-image'
-import { Link, StaticQuery, graphql } from 'gatsby'
-import Content from '../components/content'
+import React from 'react'
+import Content from './content'
 
-export default class index extends React.Component{
+class index extends React.Component{
   render(){
     return(
       <Content />
@@ -12,36 +10,4 @@ export default class index extends React.Component{
 }
 
 
-export const query = graphql`
-query Posts{
-  allContentfulBlogPost{
-    edges{
-      node{
-        title
-        date(formatString: "Do MMMM YYYY")
-        content{
-          content
-        }
-        image{
-          fixed{
-             base64
-       tracedSVG
-       aspectRatio
-       width
-       height
-       src
-       srcSet
-       srcWebp
-       srcSetWebp
-          }
-        }
-        authorName{
-          name
-        }
-        
-        
-      }
-    }
-  }
-}`
-
+export default index

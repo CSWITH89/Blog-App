@@ -1,10 +1,12 @@
-import React , { Components, Fragment, Component } from 'react'
+import React , { Component } from 'react'
 import Img from 'gatsby-image'
-import { Link, StaticQuery, graphql } from 'gatsby'
+import { graphql} from 'gatsby'
 
-class content extends Component{
+class Content extends Component{
+    
     render() {
     return(
+
      data => (
 
         <div>
@@ -38,7 +40,7 @@ class content extends Component{
 
 
 export const query = graphql`
-  query Posts {
+  query Post {
     allContentfulBlogPost {
       edges {
         node {
@@ -69,4 +71,4 @@ export const query = graphql`
   }
 `
 
-export default content
+export default Content
