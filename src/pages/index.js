@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Content from './content'
 
 class index extends React.Component{
   render(){
-    return(
-      <Content />
-    )
+    return <Fragment>
+        return content ffs:
+        <Content>
+
+        </Content>
+      </Fragment>
   }
 }
 

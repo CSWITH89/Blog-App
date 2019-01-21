@@ -1,4 +1,4 @@
-import React , { Component } from 'react'
+import React , { Component, Fragment } from 'react'
 import Img from 'gatsby-image'
 import { graphql} from 'gatsby'
 
@@ -7,8 +7,11 @@ class Content extends Component{
     render() {
     return(
 
+  
+    
      data => (
-
+       <Fragment>
+       <div>The content:</div>
         <div>
             {data.allContentfulBlogPost.edges.map(({ node }) => (
                 <div key={node.id}>
@@ -31,8 +34,9 @@ class Content extends Component{
             ))}
 
         </div>
+       </Fragment>
     )
-
+    
     )
     }
 }
