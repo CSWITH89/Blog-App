@@ -1,35 +1,16 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, Component } from 'react'
 import Img from 'gatsby-image'
 import { Link, StaticQuery, graphql } from 'gatsby'
+import Content from '../components/content'
 
-
-export default ({ data }) => {
-  return (
-    <div>
-      {data.allContentfulBlogPost.edges.map(({ node }) => (
-        <div key={node.id}>
-          <h3>
-            {node.title} 
-          </h3>
-          <br/>
-          <br/>
-          <h3>{node.content.content}</h3>
-          <br/>
-          <Img fixed={node.image.fixed} /><br />
-          <br/>
-          <small>Created by {node.authorName[0].name}</small>
-          <br/>
-          <br/>
-          <small>Created on {node.date}</small><br />
-          <br />
-          <br/>
-        </div>
-      ))}
-
-    </div>
- 
-  )
+export default class index extends React.Component{
+  render(){
+    return(
+      <Content />
+    )
+  }
 }
+
 
 export const query = graphql`
 query Posts{
