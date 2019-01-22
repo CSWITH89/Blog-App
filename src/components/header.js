@@ -1,42 +1,42 @@
-import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
-import React from 'react'
+import React, { Fragment } from 'react'
+import { graphql, StaticQuery } from 'gatsby'
 
-const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </div>
+
+
+export default () => (
+
+ 
+
+<StaticQuery query={graphql`
+             query header {
+            contentfulHeader{
+
+                  name
+                  title{
+                    href
+                  }
+                  home{
+                    href
+                  }
+                  about{
+                    href
+                  } 
+                  
+                }
+              }
+             `}
+
+             
+             
+            render={data => 
+            <Fragment>
+            <h1>
+               {data.contentfulHeader.name}
+             </h1>
+             <a href={data.contentfulHeader.title.href}>"{data.contentfulHeader.title[0]}"</a>
+             <a href={data.contentfulHeader.about.href}>"{data.contentfulHeader.about[0]}"</a>
+              </Fragment>
+             } />
+
 )
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
-
-export default Header
