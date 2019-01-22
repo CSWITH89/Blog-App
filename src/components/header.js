@@ -21,9 +21,10 @@ export const Header = () => <StaticQuery query={graphql`
                  }
                }
              }
-           `} render={data => <Header>
+           `} render={data => 
+             
                <h1>{data.allContentfulHeader.name}</h1>
-             </Header>} />
+             } />
 
   // <div
   //   style={{
