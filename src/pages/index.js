@@ -1,12 +1,12 @@
-import React, { Fragment } from 'react'
-import Img from 'gatsby-image'
-import { Link, StaticQuery, graphql } from 'gatsby'
+import React from 'react'
 import Content from '../components/content'
 import Footer from '../components/footer'
+import Header from '../components/header'
 
 
 export default () => (
   <>
+    <Header></Header>
     <Content/>
     <Footer/>
   </>
