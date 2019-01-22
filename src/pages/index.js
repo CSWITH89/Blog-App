@@ -1,10 +1,10 @@
 import React from 'react'
-import content from '../components/content'
+import Content from '../components/content'
 
 
-export default () => {
-
-<content></content>
-
-}
+export default () => (
+  <>
+    <Content/>
+  </>
+);
 
