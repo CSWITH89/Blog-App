@@ -7,7 +7,6 @@ import { graphql } from 'gatsby'
 export default ({ data }) => {
  return <Layout>
      <div>
-       <h1>Test Blog</h1>
        {data.allContentfulBlogPost.edges.map(({ node }) => <div key={node.id}>
            <h3>{node.title}</h3>
            <small>Created on {node.date}</small>
