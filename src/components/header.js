@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { graphql, StaticQuery } from 'gatsby'
 
 
-export default () => <StaticQuery query={graphql`
+
+export default () => (
+
+ 
+
+<StaticQuery query={graphql`
              query header {
             contentfulHeader{
 
@@ -20,34 +25,18 @@ export default () => <StaticQuery query={graphql`
                 }
               }
              `}
-            render={data => <h1>
-               {data.contentfulHeader.name}
-             </h1>} />
 
-  // <div
-  //   style={{
-  //     background: `rebeccapurple`,
-  //     marginBottom: `1.45rem`,
-  //   }}
-  // >
-  //   <div
-  //     style={{
-  //       margin: `0 auto`,
-  //       maxWidth: 960,
-  //       padding: `1.45rem 1.0875rem`,
-  //     }}
-  //   >
-  //     <h1 style={{ margin: 0 }}>
-  //       <Link
-  //         to="/"
-  //         style={{
-  //           color: `white`,
-  //           textDecoration: `none`,
-  //         }}
-  //       >
-  //         {siteTitle}
-  //       </Link>
-  //     </h1>
-  //   </div>
-  // </div>
+             
+             
+            render={data => 
+            <Fragment>
+            <h1>
+               {data.contentfulHeader.name}
+             </h1>
+             <a href={data.contentfulHeader.title.href}>"{data.contentfulHeader.title[0]}"</a>
+             <a href={data.contentfulHeader.about.href}>"{data.contentfulHeader.about[0]}"</a>
+              </Fragment>
+             } />
+
+)
 
