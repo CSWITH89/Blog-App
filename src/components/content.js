@@ -1,5 +1,6 @@
 import React from 'react';
-import { StaticQuery, graphql, Img } from 'gatsby';
+import Img from 'gatsby-image';
+import { StaticQuery, graphql } from 'gatsby';
 
 export default () => (
     <StaticQuery
@@ -29,8 +30,6 @@ export default () => (
                authorName{
                  name
                }
-
-
              }
            }
          }
@@ -61,4 +60,4 @@ export default () => (
 
         }
     />
-);
+); 
