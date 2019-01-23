@@ -30,10 +30,9 @@ export default () => (
              
             render={data => 
             <Fragment>
-            <h1>
-               {data.contentfulHeader.name}
-             </h1>
-             <a href={data.contentfulHeader.title.href}>"{data.contentfulHeader.title[0]}"</a>
+             <a href={data.contentfulHeader.title.href}><h1>{data.contentfulHeader.name}</h1></a>
+             <br/>
+             <br/>
              <a href={data.contentfulHeader.about.href}>"{data.contentfulHeader.about[0]}"</a>
               </Fragment>
              } />

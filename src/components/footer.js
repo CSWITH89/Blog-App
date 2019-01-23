@@ -28,11 +28,16 @@ export default () => (
               }`
     }
         render={data=>(
+
+            
             <div>
 
             <small>{data.contentfulFooter.copyright}</small>
             <Img fixed={data.contentfulFooter.iconLogo.fixed}/>
             <a href="localhost:8000/{data.contentFulFooter.href}">Contact Us</a>
+
+        
+
 
 
             </div>
