@@ -34,7 +34,7 @@ export default () => (
 
             <small>{data.contentfulFooter.copyright}</small>
             <Img fixed={data.contentfulFooter.iconLogo.fixed}/>
-            <a href="localhost:8000/{data.contentFulFooter.href}">Contact Us</a>
+            <a href={data.contentfulFooter.contactUs.href}>Contact Us</a>
 
         
 
