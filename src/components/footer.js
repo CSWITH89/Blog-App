@@ -9,7 +9,7 @@ export default () => (
             contentfulFooter{
                   copyright
                   iconLogo{
-                           fixed{
+                           fixed(width: 25, height: 25){
                               base64
                         tracedSVG
                         aspectRatio
@@ -31,9 +31,12 @@ export default () => (
 
             
             <div>
-
-            <small>{data.contentfulFooter.copyright}</small>
+                <br/>
+                <br/>
             <Img fixed={data.contentfulFooter.iconLogo.fixed}/>
+            <span>   </span>
+            <small>{data.contentfulFooter.copyright}</small>
+            <span>   </span>
             <a href={data.contentfulFooter.contactUs.href}>Contact Us</a>
 
         
