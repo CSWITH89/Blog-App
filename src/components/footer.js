@@ -38,11 +38,6 @@ export default () => (
             <small>{data.contentfulFooter.copyright}</small>
             <span>   </span>
             <a href={data.contentfulFooter.contactUs.href}>Contact Us</a>
-
-        
-
-
-
             </div>
         )}
    />

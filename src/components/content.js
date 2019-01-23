@@ -1,6 +1,6 @@
 import React from 'react';
 import Img from 'gatsby-image';
-import {StaticQuery, graphql} from'gatsby';
+import {StaticQuery, graphql, Link} from'gatsby';
 
 export default () => (
   <StaticQuery
@@ -14,22 +14,22 @@ export default () => (
               content {
                 content
               }
-              image {
-                fixed {
-                  base64
-                  tracedSVG
-                  aspectRatio
-                  width
-                  height
-                  src
-                  srcSet
-                  srcWebp
-                  srcSetWebp
-                }
-              }
+              #     image {
+              #   fixed {
+              #     base64
+              #     tracedSVG
+              #     aspectRatio
+              #     width
+              #     height
+              #     src
+              #     srcSet
+              #     srcWebp
+              #     srcSetWebp
+              #   }
               authorName {
                 name
               }
+              slug
             }
           }
         }
@@ -38,21 +38,23 @@ export default () => (
     render={data => (
       <div>
         {data.allContentfulBlogPost.edges.map(({ node }) => (
-          <div key={node.id}>
-            {' '}
-            <br />
-            <br />
-            <h2>{node.title}</h2>
-            <Img fixed={node.image.fixed} />
-            <br />
-            <br />
-            {node.content.content}
-            <br />
-            <br />
-            <small>
-              Created by {node.authorName[0].name} on {node.date}
-            </small>
-          </div>
+          <Link key={node.id} to={node.slug}>
+            <div>
+              {' '}
+              <br />
+              <br />
+              <h2>{node.title}</h2>
+              {/* <Img fixed={node.image.fixed} /> */}
+              <br />
+              <br />
+              {node.content.content}
+              <br />
+              <br />
+              <small>
+                Created by {node.authorName[0].name} on {node.date}
+              </small>
+            </div>
+          </Link>
         ))}
       </div>
     )}
