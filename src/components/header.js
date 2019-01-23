@@ -18,7 +18,7 @@ export default () => (
             name
             href
             icon {
-              fixed {
+              fixed(width: 80, height: 80) {
                 base64
                 tracedSVG
                 aspectRatio
@@ -40,10 +40,14 @@ export default () => (
     `}
     render={data => (
       <div>
-        <Img fixed = {data.contentfulHeader.home.icon.fixed}/>
-        <a href={data.contentfulHeader.title.href}>
-          {data.contentfulHeader.name}
-        </a>
+        <Img fixed={data.contentfulHeader.home.icon.fixed} />
+        <span> </span>
+        <h1>
+          <a href={data.contentfulHeader.title.href}>
+            {data.contentfulHeader.name}
+          </a>
+        </h1>{' '}
+        <span> </span>
         <a href={data.contentfulHeader.about.href}>
           {data.contentfulHeader.about.name}
         </a>
