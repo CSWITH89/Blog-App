@@ -1,41 +1,54 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { graphql, StaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
 
 
 
 export default () => (
-
- 
-
-<StaticQuery query={graphql`
-             query header {
-            contentfulHeader{
-
-                  name
-                  title{
-                    href
-                  }
-                  home{
-                    href
-                  }
-                  about{
-                    href
-                  } 
-                  
-                }
+  <StaticQuery
+    query={graphql`
+      query header {
+        contentfulHeader {
+          name
+          title {
+            name
+            href
+          }
+          home {
+            name
+            href
+            icon {
+              fixed {
+                base64
+                tracedSVG
+                aspectRatio
+                width
+                height
+                src
+                srcSet
+                srcWebp
+                srcSetWebp
               }
-             `}
-
-             
-             
-            render={data => 
-            <Fragment>
-             <a href={data.contentfulHeader.title.href}><h1>{data.contentfulHeader.name}</h1></a>
-             <br/>
-             <br/>
-             <a href={data.contentfulHeader.about.href}>"{data.contentfulHeader.about[0]}"</a>
-              </Fragment>
-             } />
-
+            }
+          }
+          about {
+            name
+            href
+          }
+        }
+      }
+    `}
+    render={data => (
+      <div>
+        <Img fixed = {data.contentfulHeader.home.icon.fixed}/>
+        <a href={data.contentfulHeader.title.href}>
+          {data.contentfulHeader.name}
+        </a>
+        <a href={data.contentfulHeader.about.href}>
+          {data.contentfulHeader.about.name}
+        </a>
+      </div>
+    )}
+  />
 )
 
