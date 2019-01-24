@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import Header from '../components/header'
 import Footer from '../components/footer'
+import { createHistory } from '@reach/router';
 
 export default ({ data }) => (
   <div>
@@ -18,8 +19,10 @@ export default ({ data }) => (
         <div>{data.contentfulBlogPost.blogCategories[1].tagType}</div>
       </Link>
     </Link> */}
-
-
+    {/* {this.state = data.contentfulBlogPost.blogCategories}
+    {this.state.map(item => ( 
+      <li key={item}>{item}</li>
+    ))} */}
     <br />
     <br />
     <small>
@@ -32,7 +35,9 @@ export default ({ data }) => (
     <Link to="/">
       <div>Go back</div>
     </Link>
-     {/* <p>{data.contentfulBlogPost.blogCategories}</p> */}
+    <ul>
+      {data.contentfulBlogPost.blogCategories.map(x => <li>{x}</li>)}
+    </ul>
     <Footer />
   </div>
 )
