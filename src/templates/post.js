@@ -6,20 +6,22 @@ import Footer from '../components/footer'
 
 export default ({ data }) => (
   <div>
-    <Link to={data.contentfulBlogPost.slug}>
-      {' '}
-      <Header headerText={data.contentfulBlogPost.title} />
-    </Link>
-
-    <div />
-    <div>{data.contentfulBlogPost.title}</div>
+    {' '}
+    <Header headerText={data.contentfulBlogPost.title} />
     <div>{data.contentfulBlogPost.content.content}</div>
     <br />
     <br />
     <small>
-      Created by {data.contentfulBlogPost.authorName[0].name} on{' '} {data.contentfulBlogPost.date}
+      Created by {data.contentfulBlogPost.authorName[0].name} on{' '}
+      {data.contentfulBlogPost.date}
     </small>
-
+    <Link to={data.contentfulBlogPost.slug}>
+      <div>Return to top</div>
+      
+    </Link>
+        <Link to="/">
+            <div>Go back</div>
+        </Link>
     <Footer />
   </div>
 )
