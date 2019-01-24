@@ -18,6 +18,8 @@ export default ({ data }) => (
         <div>{data.contentfulBlogPost.blogCategories[1].tagType}</div>
       </Link>
     </Link> */}
+
+
     <br />
     <br />
     <small>

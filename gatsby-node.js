@@ -25,6 +25,7 @@ exports.createPages = ({ graphql, actions }) => {
           context: {
             slug: node.slug,
             tagType: node.blogCategories.tagType,
+            
           },
         })
       })
