@@ -10,9 +10,6 @@ export default ({data}) => {
         {data.allContentfulAboutUs.edges.map(({ node }) => (
           <Fragment key={node.id}>
             <div>
-              <h2>{node.name}</h2>
-            </div>
-            <div>
               {node.content.content}
               </div>
             <div>
@@ -20,7 +17,7 @@ export default ({data}) => {
               <Img fixed={node.authorref1.avatar.fixed} />
               {node.authorref1.name}
             </div>
-
+<br></br>
             <div>
               <Img fixed={node.authorref2.avatar.fixed} />
               {node.authorref2.name}

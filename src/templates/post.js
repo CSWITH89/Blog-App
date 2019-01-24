@@ -1,8 +1,7 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby';
+import { graphql, Link } from 'gatsby'
 import Header from '../components/header'
 import Footer from '../components/footer'
-
 
 export default ({ data }) => (
   <div>
@@ -11,15 +10,14 @@ export default ({ data }) => (
     <div>{data.contentfulBlogPost.content.content}</div>
     <br />
     <br />
-    <Link>
-
+    {/* <Link>
       <Link to={data.contentfulBlogPost.blogCategories[0].tagType}>
         <div>{data.contentfulBlogPost.blogCategories[0].tagType}</div>
       </Link>
-            <Link to={data.contentfulBlogPost.blogCategories[1].tagType}>
-                <div>{data.contentfulBlogPost.blogCategories[1].tagType}</div>
-            </Link>
-    </Link>
+      <Link to={data.contentfulBlogPost.blogCategories}>
+        <div>{data.contentfulBlogPost.blogCategories[1].tagType}</div>
+      </Link>
+    </Link> */}
     <br />
     <br />
     <small>
@@ -32,25 +30,26 @@ export default ({ data }) => (
     <Link to="/">
       <div>Go back</div>
     </Link>
+     {/* <p>{data.contentfulBlogPost.blogCategories}</p> */}
     <Footer />
   </div>
 )
 
 export const singlePostQuery = graphql`
-         query singlePost($slug: String!) {
-           contentfulBlogPost(slug: { eq: $slug }) {
-             title
-             slug
-             date(formatString: "Do MMMM YYYY")
-             content {
-               content
-             }
-             authorName {
-               name
-             }
-             blogCategories {
-               tagType
-             }
-           }
-         }
-       `
+  query singlePost($slug: String!) {
+    contentfulBlogPost(slug: { eq: $slug }) {
+      title
+      slug
+      date(formatString: "Do MMMM YYYY")
+      content {
+        content
+      }
+      authorName {
+        name
+      }
+      blogCategories {
+        tagType
+      }
+    }
+  }
+`
