@@ -11,17 +11,26 @@ export default ({ data }) => (
     <div>{data.contentfulBlogPost.content.content}</div>
     <br />
     <br />
+    <Link>
+      <Link to={data.contentfulBlogPost.blogCategories[0].tagType}>
+        <div>{data.contentfulBlogPost.blogCategories[0].tagType}</div>
+      </Link>
+            <Link to={data.contentfulBlogPost.blogCategories[1].tagType}>
+                <div>{data.contentfulBlogPost.blogCategories[1].tagType}</div>
+            </Link>
+    </Link>
+    <br />
+    <br />
     <small>
       Created by {data.contentfulBlogPost.authorName[0].name} on{' '}
       {data.contentfulBlogPost.date}
     </small>
     <Link to={data.contentfulBlogPost.slug}>
       <div>Return to top</div>
-      
     </Link>
-        <Link to="/">
-            <div>Go back</div>
-        </Link>
+    <Link to="/">
+      <div>Go back</div>
+    </Link>
     <Footer />
   </div>
 )
@@ -37,6 +46,9 @@ export const singlePostQuery = graphql`
              }
              authorName {
                name
+             }
+             blogCategories {
+               tagType
              }
            }
          }
