@@ -2,27 +2,13 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import Header from '../components/header'
 import Footer from '../components/footer'
-import { createHistory } from '@reach/router';
+//import { createHistory } from '@reach/router';
 
 export default ({ data }) => (
   <div>
     {' '}
     <Header headerText={data.contentfulBlogPost.title} />
     <div>{data.contentfulBlogPost.content.content}</div>
-    <br />
-    <br />
-    {/* <Link>
-      <Link to={data.contentfulBlogPost.blogCategories[0].tagType}>
-        <div>{data.contentfulBlogPost.blogCategories[0].tagType}</div>
-      </Link>
-      <Link to={data.contentfulBlogPost.blogCategories}>
-        <div>{data.contentfulBlogPost.blogCategories[1].tagType}</div>
-      </Link>
-    </Link> */}
-    {/* {this.state = data.contentfulBlogPost.blogCategories}
-    {this.state.map(item => ( 
-      <li key={item}>{item}</li>
-    ))} */}
     <br />
     <br />
     <small>
@@ -35,9 +21,12 @@ export default ({ data }) => (
     <Link to="/">
       <div>Go back</div>
     </Link>
+
     <ul>
-      {data.contentfulBlogPost.blogCategories.map(x => <li>{x}</li>)}
+      {data.contentfulBlogPost.blogCategories.map(x => <li>{console.log(x)}</li>)}
     </ul>
+
+
     <Footer />
   </div>
 )
