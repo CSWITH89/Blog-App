@@ -38,13 +38,17 @@ export default () => (
     render={data => (
       <div>
         {data.allContentfulBlogPost.edges.map(({ node }) => (
-          <Link key={node.id} to={node.slug}>
+          <div key={node.id}>
+            <Link to={node.slug}>
+              <div>
+                {' '}
+                <br />
+                <br />
+                <h2>{node.title}</h2>
+                {/* <Img fixed={node.image.fixed} /> */}
+              </div>
+            </Link>
             <div>
-              {' '}
-              <br />
-              <br />
-              <h2>{node.title}</h2>
-              {/* <Img fixed={node.image.fixed} /> */}
               <br />
               <br />
               {node.content.content}
@@ -54,7 +58,7 @@ export default () => (
                 Created by {node.authorName[0].name} on {node.date}
               </small>
             </div>
-          </Link>
+          </div>
         ))}
       </div>
     )}

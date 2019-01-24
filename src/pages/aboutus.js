@@ -13,8 +13,18 @@ export default ({data}) => {
               <h2>{node.name}</h2>
             </div>
             <div>
+              {node.content.content}
+              </div>
+            <div>
               {' '}
               <Img fixed={node.authorref1.avatar.fixed} />
+              {node.authorref1.name}
+            </div>
+
+            <div>
+              <Img fixed={node.authorref2.avatar.fixed} />
+              {node.authorref2.name}
+
             </div>
           </Fragment>
         ))}
@@ -24,48 +34,48 @@ export default ({data}) => {
     }
 
 export const query = graphql`
- query {
-  allContentfulAboutUs {
-    edges {
-      node {
-        name
-        content {
-          content
-        }
-        authorref1 {
-          name
-          avatar {
-                fixed(width: 70, height: 100){
-              base64
-              tracedSVG
-              aspectRatio
-              width
-              height
-              src
-              srcSet
-              srcWebp
-              srcSetWebp
-            }
-          }
-        }
-        authorref2 {
-          name
-          avatar {
-            fixed {
-              base64
-              tracedSVG
-              aspectRatio
-              width
-              height
-              src
-              srcSet
-              srcWebp
-              srcSetWebp
-            }
-          }
-        }
-      }
-    }
-  }
-}
-`
+         query {
+           allContentfulAboutUs {
+             edges {
+               node {
+                 name
+                 content {
+                   content
+                 }
+                 authorref1 {
+                   name
+                   avatar {
+                     fixed(width: 70, height: 100) {
+                       base64
+                       tracedSVG
+                       aspectRatio
+                       width
+                       height
+                       src
+                       srcSet
+                       srcWebp
+                       srcSetWebp
+                     }
+                   }
+                 }
+                 authorref2 {
+                   name
+                   avatar {
+                     fixed(width: 70, height: 100) {
+                       base64
+                       tracedSVG
+                       aspectRatio
+                       width
+                       height
+                       src
+                       srcSet
+                       srcWebp
+                       srcSetWebp
+                     }
+                   }
+                 }
+               }
+             }
+           }
+         }
+       `
