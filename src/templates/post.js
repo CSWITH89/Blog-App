@@ -12,6 +12,7 @@ export default ({ data }) => (
     <br />
     <br />
     <Link>
+
       <Link to={data.contentfulBlogPost.blogCategories[0].tagType}>
         <div>{data.contentfulBlogPost.blogCategories[0].tagType}</div>
       </Link>

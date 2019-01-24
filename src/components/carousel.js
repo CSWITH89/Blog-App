@@ -14,19 +14,15 @@ export default class extends React.Component {
   };
 
   render() {
-    return (
-      <Carousel
-      style={divStyle}
-        slideIndex={this.state.slideIndex}
-        afterSlide={slideIndex => this.setState({ slideIndex })}
-      >
-        <img  src="https://www.canterburybid.co.uk/wp-content/uploads/2015/12/Small-Business-Saturday-UK-Facebook-Banner-2015.jpg" />
-        <img src="https://www.canterburybid.co.uk/wp-content/uploads/2015/12/Small-Business-Saturday-UK-Facebook-Banner-2015.jpg" />
-        <img src="https://www.canterburybid.co.uk/wp-content/uploads/2015/12/Small-Business-Saturday-UK-Facebook-Banner-2015.jpg" />
-        <img src="https://www.canterburybid.co.uk/wp-content/uploads/2015/12/Small-Business-Saturday-UK-Facebook-Banner-2015.jpg" />
-        <img src="https://www.canterburybid.co.uk/wp-content/uploads/2015/12/Small-Business-Saturday-UK-Facebook-Banner-2015.jpg" />
-        <img src="https://www.canterburybid.co.uk/wp-content/uploads/2015/12/Small-Business-Saturday-UK-Facebook-Banner-2015.jpg" />
+    return <Carousel style={divStyle} slideIndex={this.state.slideIndex} afterSlide={slideIndex => this.setState(
+            { slideIndex }
+          )}>
+      <img src="https://www.canterburybid.co.uk/wp-content/uploads/2015/12/Small-Business-Saturday-UK-Facebook-Banner-2015.jpg" alt="" />
+      <img src="https://www.canterburybid.co.uk/wp-content/uploads/2015/12/Small-Business-Saturday-UK-Facebook-Banner-2015.jpg" alt="" />
+      <img src="https://www.canterburybid.co.uk/wp-content/uploads/2015/12/Small-Business-Saturday-UK-Facebook-Banner-2015.jpg" alt=""/>
+      <img src="https://www.canterburybid.co.uk/wp-content/uploads/2015/12/Small-Business-Saturday-UK-Facebook-Banner-2015.jpg" alt=""/>
+      <img src="https://www.canterburybid.co.uk/wp-content/uploads/2015/12/Small-Business-Saturday-UK-Facebook-Banner-2015.jpg" alt=""/>
+      <img src="https://www.canterburybid.co.uk/wp-content/uploads/2015/12/Small-Business-Saturday-UK-Facebook-Banner-2015.jpg" alt=""/>
       </Carousel>
-    );
   }
 }

@@ -8,10 +8,10 @@ const containerStyle = {
   width: '1000px'
 };
 
-const centerStyle = {
-  display: 'flex',
-  justifyContent: 'center'
-};
+// const centerStyle = {
+//   display: 'flex',
+//   justifyContent: 'center'
+// };
 
 export default () => (
   <div>
