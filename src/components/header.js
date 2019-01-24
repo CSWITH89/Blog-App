@@ -1,42 +1,63 @@
-import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
-import React from 'react'
+import React, { Fragment } from 'react'
+import { graphql, StaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
 
-const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </div>
+
+
+export default (props) => (
+  <StaticQuery
+    query={graphql`
+      query header {
+        contentfulHeader {
+          name
+          title {
+            name
+            href
+          }
+          home {
+            name
+            href
+            icon {
+              fixed(width: 80, height: 80) {
+                base64
+                tracedSVG
+                aspectRatio
+                width
+                height
+                src
+                srcSet
+                srcWebp
+                srcSetWebp
+              }
+            }
+          }
+          about {
+            name
+            href
+          }
+        }
+      }
+    `}
+    render={data => (
+      <Fragment>
+        <div>
+          <Img fixed={data.contentfulHeader.home.icon.fixed} />
+          <span> </span>
+          <big>
+            <a href={data.contentfulHeader.title.href}>
+              {data.contentfulHeader.name}
+            </a>
+          </big>{' '}
+          <span> </span>
+          <a href={data.contentfulHeader.about.href}>
+            {data.contentfulHeader.about.name}
+          </a>
+        </div>
+        <div>
+          <h1>{props.headerText}</h1>
+        </div>
+      </Fragment>
+    )}
+  />
 )
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
-
-export default Header
