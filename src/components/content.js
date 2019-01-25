@@ -6,9 +6,10 @@ export default () => (
   <StaticQuery
     query={graphql`
       query BlogPosts {
-        allContentfulBlogPost {
+        allContentfulBlogPost(sort: { fields: [createdAt], order: DESC }) {
           edges {
             node {
+              createdAt
               title
               date(formatString: "Do MMMM YYYY")
               content {
