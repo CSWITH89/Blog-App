@@ -23,24 +23,24 @@ export default () => (
                 content {
                   content
                 }
+                image {
+                  fixed {
+                    base64
+                    tracedSVG
+                    aspectRatio
+                    width
+                    height
+                    src
+                    srcSet
+                    srcWebp
+                    srcSetWebp
+                  }
+                }
                 authorName {
                   name
                 }
                 blogCategories {
                   tagType
-                }
-              }
-              image {
-                fixed {
-                  base64
-                  tracedSVG
-                  aspectRatio
-                  width
-                  height
-                  src
-                  srcSet
-                  srcWebp
-                  srcSetWebp
                 }
               }
             }
