@@ -23,7 +23,12 @@ export default () => (
               edges{
                 node{
                   title
+<<<<<<< Updated upstream
                   date(formatString: "Do MMMM YYYY")
+=======
+                  date
+                  slug
+>>>>>>> Stashed changes
                   content{
                     content
                   }
@@ -63,6 +68,12 @@ export default () => (
                            Created by {node.authorName[0].name} on {node.date}
                         </small>
                      </div>
+                   <Link to={node.slug}>
+                     <div>Return to top</div>
+                   </Link>
+                   <Link to="/">
+                     <div>Go back</div>
+                   </Link>
                   </div>
                ))}
             </div>

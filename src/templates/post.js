@@ -15,19 +15,27 @@ export default ({ data }) => (
       Created by {data.contentfulBlogPost.authorName[0].name} on{' '}
       {data.contentfulBlogPost.date}
     </small>
+    <br></br>
+    <br></br>
+    <div>
+      Tags for this post: <br />
+      <ul>
+        {data.contentfulBlogPost.blogCategories.map(x => (
+          <li>
+            <Link to={x.tagType}>
+              <div>{x.tagType}</div>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <br />
     <Link to={data.contentfulBlogPost.slug}>
       <div>Return to top</div>
     </Link>
     <Link to="/">
       <div>Go back</div>
     </Link>
-<br></br>
-<div>Tags for this post: <br></br>
-    <ul>
-        {data.contentfulBlogPost.blogCategories.map(x => <li><Link to={x.tagType}><div>{x.tagType}</div></Link></li>)}
-    </ul>
-    </div>
-
     <Footer />
   </div>
 )

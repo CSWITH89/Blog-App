@@ -23,7 +23,12 @@ export default () => (
               edges{
                 node{
                   title
+<<<<<<< Updated upstream
                   date(formatString: "Do MMMM YYYY")
+=======
+                  date
+                  slug
+>>>>>>> Stashed changes
                   content{
                     content
                   }
