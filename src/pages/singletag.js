@@ -4,7 +4,7 @@ class SingleTag extends React.Component {
     render(){
         return(
             <>
-            {this.props.categorie.tagType}
+            {this.props.tagType}
             </>
         )
     }

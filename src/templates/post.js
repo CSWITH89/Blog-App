@@ -21,11 +21,12 @@ export default ({ data }) => (
     <Link to="/">
       <div>Go back</div>
     </Link>
-
+<br></br>
+<div>Tags for this post: <br></br>
     <ul>
-      {data.contentfulBlogPost.blogCategories.map(x => <li>{console.log(x)}</li>)}
+      {data.contentfulBlogPost.blogCategories.map(x => <li>{x.tagType}</li>)}
     </ul>
-
+    </div>
 
     <Footer />
   </div>
