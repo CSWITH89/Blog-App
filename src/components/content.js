@@ -1,5 +1,5 @@
 import React from 'react';
-// import Img from 'gatsby-image';
+import Img from 'gatsby-image';
 import {StaticQuery, graphql, Link} from'gatsby';
 
 export default () => (
@@ -15,18 +15,19 @@ export default () => (
               content {
                 content
               }
-              #     image {
-              #   fixed {
-              #     base64
-              #     tracedSVG
-              #     aspectRatio
-              #     width
-              #     height
-              #     src
-              #     srcSet
-              #     srcWebp
-              #     srcSetWebp
-              #   }
+              image {
+                fixed {
+                  base64
+                  tracedSVG
+                  aspectRatio
+                  width
+                  height
+                  src
+                  srcSet
+                  srcWebp
+                  srcSetWebp
+                }
+              }
               authorName {
                 name
               }
@@ -46,7 +47,7 @@ export default () => (
                 <br />
                 <br />
                 <h2>{node.title}</h2>
-                {/* <Img fixed={node.image.fixed} /> */}
+                <Img fixed={node.image.fixed} />
               </div>
             </Link>
             <div>

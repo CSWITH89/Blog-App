@@ -2,12 +2,15 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import Header from '../components/header'
 import Footer from '../components/footer'
+import Img from 'gatsby-image'
 //import { createHistory } from '@reach/router';
 
 export default ({ data }) => (
   <div>
     {' '}
     <Header headerText={data.contentfulBlogPost.title} />
+    <br />
+    <Img fixed={data.contentfulBlogPost.image.fixed} />
     <div>{data.contentfulBlogPost.content.content}</div>
     <br />
     <br />
@@ -15,8 +18,8 @@ export default ({ data }) => (
       Created by {data.contentfulBlogPost.authorName[0].name} on{' '}
       {data.contentfulBlogPost.date}
     </small>
-    <br></br>
-    <br></br>
+    <br />
+    <br />
     <div>
       Tags for this post: <br />
       <ul>
@@ -41,20 +44,33 @@ export default ({ data }) => (
 )
 
 export const singlePostQuery = graphql`
-  query singlePost($slug: String!) {
-    contentfulBlogPost(slug: { eq: $slug }) {
-      title
-      slug
-      date(formatString: "Do MMMM YYYY")
-      content {
-        content
-      }
-      authorName {
-        name
-      }
-      blogCategories {
-        tagType
-      }
-    }
-  }
-`
+         query singlePost($slug: String!) {
+           contentfulBlogPost(slug: { eq: $slug }) {
+             title
+             slug
+             date(formatString: "Do MMMM YYYY")
+             content {
+               content
+             }
+             authorName {
+               name
+             }
+             blogCategories {
+               tagType
+             }
+             image {
+               fixed {
+                 base64
+                 tracedSVG
+                 aspectRatio
+                 width
+                 height
+                 src
+                 srcSet
+                 srcWebp
+                 srcSetWebp
+               }
+             }
+           }
+         }
+       `
