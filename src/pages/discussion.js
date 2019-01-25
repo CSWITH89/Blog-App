@@ -23,7 +23,7 @@ export default () => (
               edges{
                 node{
                   title
-                  date
+                  date(formatString: "Do MMMM YYYY")
                   content{
                     content
                   }
