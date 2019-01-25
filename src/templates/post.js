@@ -21,7 +21,7 @@ export default ({ data }) => (
     <br />
     <br />
     <div>
-      Tags for this post: <br />
+      <b>Tags for this post:</b> <br />
       <ul>
         {data.contentfulBlogPost.blogCategories.map(x => (
           <li>

@@ -1,25 +1,22 @@
 import React, {Fragment} from 'react'
 import { graphql, Link, StaticQuery } from 'gatsby';
 
-export default abovefooter (
-<StaticQuery
-query={graphql`
-        query singleSlug {
-            contentfulBlogPost {
-                slug
-            }
+export default props => (
+  <StaticQuery
+    query={graphql`
+      query singleSlug {
+        contentfulBlogPost {
+          slug
         }
-`}
-
-  render={data=>(
-    <Fragment>
-      <div>
-              <div>Return to top <Link to={data.contentfulBlogPost.slug}></Link></div>
-        {/* <div>Go back<Link to="/"></Link></div> */}
-      </div>
-    </Fragment>
-  )}
-
-/
->
+      }
+    `}
+    render={data => (
+      <Fragment>
+        <div>
+                <Link to={props.returnTop}><div>Return to top </div></Link>
+                <Link to={props.goBack}><div>{props.backText} </div></Link>
+        </div>
+      </Fragment>
+    )}
+  />
 )

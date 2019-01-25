@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import Header from '../components/header'
 import Footer from '../components/footer'
+import Abovefooter from "../components/abovefooter";
 
 export default ({data}) => { 
     return <>
@@ -25,6 +26,8 @@ export default ({data}) => {
             </div>
           </Fragment>
         ))}
+        {/* TODO: FIX ISSUE BELOW */}
+      <Abovefooter goBackLink="/" backText="Home"/>
         <Footer />
       </>
 

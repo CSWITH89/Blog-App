@@ -3,7 +3,7 @@ import Content from '../components/content'
 import Footer from '../components/footer'
 import Header from '../components/header'
 import Carousel from '../components/carousel'
-// import abovefooter from '../components/abovefooter';
+import Abovefooter from '../components/abovefooter';
 
 const containerStyle = {
   width: '1000px'
@@ -21,7 +21,7 @@ export default () => (
     <div style={containerStyle}>
       <Content />
     </div>
-    {/* <abovefooter /> */}
+    <Abovefooter returnTop="/" returnTopText="Return to top"/>
     <Footer />
   </div>
 );
