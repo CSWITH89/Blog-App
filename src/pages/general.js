@@ -6,15 +6,15 @@ import {StaticQuery, graphql, Link} from'gatsby';
 
 export default () => (
   <div>
-    <Header headerText="Discussion Posts" />
+    <Header headerText="General Posts" />
       <StaticQuery
          query={graphql`
-         query allDiscussionPosts{
+         query allGeneralPosts{
             allContentfulBlogPost (filter: {
               blogCategories: { 
                 elemMatch: {
                   tagType:{
-                    in: ["discussion"]
+                    in: ["general"]
                   }
                   
                 }
