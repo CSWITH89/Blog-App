@@ -4,6 +4,7 @@ import Footer from '../components/footer'
 import Header from '../components/header'
 import Carousel from '../components/carousel'
 import Abovefooter from '../components/abovefooter';
+import Sidebar from '../components/sidebar';
 
 const containerStyle = {
   width: '1000px'
@@ -18,6 +19,8 @@ export default () => (
   <div>
     <Header></Header>
     <Carousel />
+    <br/>
+    <Sidebar/>
     <div style={containerStyle}>
       <Content />
     </div>
