@@ -5,9 +5,10 @@ import {StaticQuery, graphql, Link} from'gatsby';
 export default () => (
   <StaticQuery
     query={graphql`
-      query BlogPosts {
-        filteredByLatest: allContentfulBlogPost(
-          sort: { fields: [createdAt], order: DESC }
+      query BlogPostsOldest {
+
+        filteredByOldest: allContentfulBlogPost(
+          sort: { fields: [createdAt], order: ASC }
         ) {
           edges {
             node {
@@ -39,10 +40,9 @@ export default () => (
         }
       }
     `}
-    
     render={data => (
       <div>
-        {data.filteredByLatest.edges.map(({ node }) => (
+        {data.filteredByOldest.edges.map(({ node }) => (
           <div key={node.id}>
             <Link to={node.slug}>
               <div>

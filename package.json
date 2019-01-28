@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "gatsby-blog-site",
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Aviraj Mandair <amandair@and.digital, Chris Withall <cwithall@and.digital",
   "dependencies": {
     "bootstrap": "^4.2.1",
     "dotenv": "^6.2.0",
@@ -26,6 +26,7 @@
     "react": "^16.7.0",
     "react-bootstrap": "^0.32.4",
     "react-dom": "^16.7.0",
+    "react-dropdown": "^1.6.4",
     "react-helmet": "^5.2.0",
     "reactstrap": "^7.1.0"
   },

@@ -4,6 +4,7 @@ import Footer from '../components/footer'
 import Header from '../components/header'
 import Carousel from '../components/carousel'
 import Abovefooter from '../components/abovefooter';
+import Dropdown from '../components/dropdown';
 import Sidebar from '../components/sidebar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -44,6 +45,7 @@ export default () => (
     <br/>
     <Sidebar/>
     <div style={containerStyle}>
+    <Dropdown></Dropdown>
       <Content />
     </div>
     <Abovefooter returnTop="/" returnTopText="Return to top"/>

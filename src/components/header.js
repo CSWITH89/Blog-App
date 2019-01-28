@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react'
-import { graphql, StaticQuery } from 'gatsby'
+import { graphql, StaticQuery, Link } from 'gatsby'
 import Img from 'gatsby-image'
 
 
 
-export default (props) => (
+export default props => (
   <StaticQuery
     query={graphql`
       query header {
@@ -41,7 +41,10 @@ export default (props) => (
     render={data => (
       <Fragment>
         <div>
-          <Img fixed={data.contentfulHeader.home.icon.fixed} />
+          {' '}
+          <Link to="/">
+            <Img fixed={data.contentfulHeader.home.icon.fixed} />
+          </Link>
           <span> </span>
           <big>
             <a href={data.contentfulHeader.title.href}>
