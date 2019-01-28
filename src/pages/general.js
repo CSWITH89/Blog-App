@@ -48,31 +48,43 @@ export default () => (
         }
       `}
       render={data => (
-          <div>
-            {data.allContentfulBlogPost.edges.map(({ node }) => (
-              <div key={node.id}>
-                <Link to={node.slug}>
-                  <div>
-                    {' '}
-                    <br />
-                    <br />
-                    <h2>{node.title}</h2>
-                    <Img fixed={node.image.fixed} />
-                  </div>
-                </Link>
+        <div>
+          {data.allContentfulBlogPost.edges.map(({ node }) => (
+            <div key={node.id}>
+              <Link to={node.slug}>
                 <div>
+                  {' '}
                   <br />
                   <br />
-                  {node.content.content}
-                  <br />
-                  <br />
-                  <small>
-                    Created by {node.authorName[0].name} on {node.date}
-                  </small>
+                  <h2>{node.title}</h2>
+                  <Img fixed={node.image.fixed} />
                 </div>
+              </Link>
+              <div>
+                <br />
+                <br />
+                {node.content.content}
+                <br />
+                <br />
+                <small>
+                  Created by {node.authorName[0].name} on {node.date}
+                </small>
+
+                <br />
+                <br />
+                <br />
+                <b>Tags for this post: </b>
+                {node.blogCategories.map(x => (
+                  <li>
+                    <Link to={x.tagType}>
+                      <div>{x.tagType}</div>
+                    </Link>
+                  </li>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
+        </div>
       )}
     />
     <Footer />

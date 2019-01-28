@@ -10,24 +10,31 @@ export default ({data}) => {
         <Header headerText="About Us" />
         {data.allContentfulAboutUs.edges.map(({ node }) => (
           <Fragment key={node.id}>
-            <div>
-              {node.content.content}
-              </div>
+            <div>{node.content.content}</div>
             <div>
               {' '}
               <Img fixed={node.authorref1.avatar.fixed} />
               {node.authorref1.name}
             </div>
-<br></br>
+            <br />
             <div>
               <Img fixed={node.authorref2.avatar.fixed} />
               {node.authorref2.name}
-
             </div>
+            {/* # Look at this Video:
+            `youtube:https://www.youtube.com/embed/2Xc9gXyf2G4` */}
+
+          <br></br><br></br>  <div>       We made this video: <br></br>     <iframe
+              title="test"
+              src="https://www.youtube.com/embed/b2H7fWhQcdE"
+              width="600"
+              height="400"
+            /></div>
+
           </Fragment>
         ))}
-        {/* TODO: FIX ISSUE BELOW */}
-      <Abovefooter goBackLink="/" backText="Home"/>
+
+        <Abovefooter returnTop="/aboutus" returnTopText="Return to top" goBackLink="/" goBackText="Home" />
         <Footer />
       </>
 

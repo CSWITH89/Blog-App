@@ -13,8 +13,12 @@ export default props => (
     render={data => (
       <Fragment>
         <div>
-                <Link to={props.returnTop}><div>Return to top </div></Link>
-                <Link to={props.goBack}><div>{props.backText} </div></Link>
+          <Link to={props.returnTop}>
+            <div>{props.returnTopText} </div>
+          </Link>
+          <Link to={props.goBackLink}>
+            <div>{props.goBackText} </div>
+          </Link>
         </div>
       </Fragment>
     )}

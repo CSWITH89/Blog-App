@@ -69,6 +69,18 @@ export default () => (
                 <small>
                   Created by {node.authorName[0].name} on {node.date}
                 </small>
+
+                <br />
+                <br />
+                <br />
+                <b>Tags for this post: </b>
+                {node.blogCategories.map(x => (
+                  <li>
+                    <Link to={x.tagType}>
+                      <div>{x.tagType}</div>
+                    </Link>
+                  </li>
+                ))}
               </div>
             </div>
           ))}

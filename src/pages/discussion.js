@@ -69,19 +69,20 @@ export default () => (
                 <small>
                   Created by {node.authorName[0].name} on {node.date}
                 </small>
-                {/* 
-                  todo: FIX THIS AND ONLY RETURN AT END OF PAGE
+                
+                  {/* todo: FIX THIS AND ONLY RETURN AT END OF PAGE */}
+
                 <br />
                 <br />
                 <br />
-                <b>Other categories: </b>
+                <b>Categories: </b>
                 {node.blogCategories.map(x => (
                   <li>
                     <Link to={x.tagType}>
                       <div>{x.tagType}</div>
                     </Link>
                   </li>
-                ))} */}
+                ))}
               </div>
             </div>
           ))}

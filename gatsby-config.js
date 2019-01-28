@@ -46,5 +46,43 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
-  ],
+
+
+      
+
+      {
+        resolve: `gatsby-transformer-remark`,
+        options: {
+          // CommonMark mode (default: true)
+          commonmark: true,
+          // Footnotes mode (default: true)
+          footnotes: true,
+          // Pedantic mode (default: true)
+          pedantic: true,
+          // GitHub Flavored Markdown mode (default: true)
+          gfm: true,
+          // Plugins configs
+          plugins: [{
+            resolve: "gatsby-remark-embed-video",
+            options: {
+              path: 'src/test.md',
+              width: 8,
+              ratio: 1.77, // Optional: Defaults to 16/9 = 1.77
+              height: 4, // Optional: Overrides optional.ratio
+              related: false, //Optional: Will remove related videos from the end of an embedded YouTube video.
+              noIframeBorder: true //Optional: Disable insertion of <style> border: 0
+            }},
+            {
+              resolve: "gatsby-remark-embed-youtube",
+              options: {
+                path: 'src/test.md',
+                width: 8,
+                height: 4
+              }
+            }
+          ],
+        },
+      },
+    ],
+
 }
