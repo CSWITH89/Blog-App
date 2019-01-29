@@ -25,6 +25,7 @@ export class SimpleDropdown extends React.Component {
     const { hidden } = this.state;
     return (
       <Dropdown>
+      <br></br>
         <Button
           secondary
           dropdownToggle

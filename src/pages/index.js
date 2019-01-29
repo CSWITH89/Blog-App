@@ -4,13 +4,15 @@ import Footer from '../components/footer'
 import Header from '../components/header'
 import Carousel from '../components/carousel'
 import Abovefooter from '../components/abovefooter';
-import Dropdown from '../components/dropdown';
+// import Dropdown from '../components/dropdown';
 import Sidebar from '../components/sidebar';
-import styled from "styled-components"
-import SimpleDropdown from "../components/dropdowncomp";
+import styled from 'styled-components';
+import SimpleDropdown from '../components/dropdowncomp';
 //import 'bootstrap/dist/css/bootstrap.min.css';
 //import {Badge} from  'react-bootstrap';
 
+
+//import {Alert, DropdownButton} from  'react-bootstrap';
 
 
 // const containerStyle = {
@@ -43,7 +45,6 @@ export default () => (
     <Container>
     <Carousel />
     <SimpleDropdown></SimpleDropdown>
-    <Dropdown></Dropdown>
       <Content />
     </Container>
     <Abovefooter returnTop="/" returnTopText="Return to top"/>

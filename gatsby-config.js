@@ -30,7 +30,6 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-styled-components`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -78,7 +77,7 @@ module.exports = {
               options: {
                 path: 'src/test.md',
                 width: 8,
-                height: 4
+                height: 400
               }
             }
           ],
