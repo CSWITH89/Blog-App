@@ -6,17 +6,25 @@ import Carousel from '../components/carousel'
 import Abovefooter from '../components/abovefooter';
 import Dropdown from '../components/dropdown';
 import Sidebar from '../components/sidebar';
+import styled from "styled-components"
+import SimpleDropdown from "../components/dropdowncomp";
 //import 'bootstrap/dist/css/bootstrap.min.css';
+//import {Badge} from  'react-bootstrap';
 
 
 
-import {Badge} from  'react-bootstrap';
+// const containerStyle = {
+//   width: '1000px'
+// };
 
-
-
-const containerStyle = {
-  width: '1000px'
-};
+const Container = styled.div`
+  margin: 3rem auto;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`
 
 // const centerStyle = {
 //   display: 'flex',
@@ -30,15 +38,14 @@ export default () => (
 
   <div>
     <Header></Header>
-    <Carousel />
+    
     <Sidebar/>
-    <div style={containerStyle}>
-    <p>
-  Badges <Badge>42</Badge>
-</p>
+    <Container>
+    <Carousel />
+    <SimpleDropdown></SimpleDropdown>
     <Dropdown></Dropdown>
       <Content />
-    </div>
+    </Container>
     <Abovefooter returnTop="/" returnTopText="Return to top"/>
     <Footer />
   </div>
