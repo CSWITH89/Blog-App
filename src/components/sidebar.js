@@ -3,7 +3,9 @@ import {StaticQuery, graphql, Link } from 'gatsby';
 
 
 const sidebarStyle = {
+    'text-decoration': 'none',
     'margin-top':'430px',
+    padding: '10px',
     width: '400px',
     border: '2px solid black',
     float: 'right'
