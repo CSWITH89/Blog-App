@@ -3,8 +3,10 @@ import {StaticQuery, graphql, Link } from 'gatsby';
 
 
 const sidebarStyle = {
-    width: '500px',
-    border: '2px solid black'
+    'margin-top':'430px',
+    width: '400px',
+    border: '2px solid black',
+    float: 'right'
   };
 
 export default () => (
@@ -27,9 +29,12 @@ export default () => (
             <div style={sidebarStyle}>
             {data.allContentfulBlogPost.edges.map(({ node }) => (
               <div key={node.id}>
+              
+              <br/>
                 <Link to={node.slug}>
                   <div>{node.title}<span> - </span>{node.date}</div>
                 </Link>
+                <br/>
                 
                  
                 </div>

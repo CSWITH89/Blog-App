@@ -1,6 +1,17 @@
 import React from 'react';
 import Img from 'gatsby-image';
 import {StaticQuery, graphql, Link} from'gatsby';
+import styled from 'styled-components';
+import { Button } from 'styled-button-component/lib/components/Button';
+
+const containerStyle = {
+  float: 'right'
+};
+
+const linkStyle = {
+    color: 'gray',
+    'text-decoration': 'none'
+  };
 
 export default () => (
   <StaticQuery
@@ -11,6 +22,9 @@ export default () => (
         ) {
           edges {
             node {
+                previewContent{
+                    previewContent
+                  }
               createdAt
               title
               date(formatString: "Do MMMM YYYY")
@@ -18,7 +32,7 @@ export default () => (
                 content
               }
               image {
-                fixed {
+                fixed(height: 200) {
                   base64
                   tracedSVG
                   aspectRatio
@@ -44,24 +58,29 @@ export default () => (
       <div>
         {data.filteredByLatest.edges.map(({ node }) => (
           <div key={node.id}>
-            <Link to={node.slug}>
+            <Link style={linkStyle} to={node.slug}>
               <div>
                 {' '}
                 <br />
                 <br />
                 <h2>{node.title}</h2>
-                <Img fixed={node.image.fixed} />
+                <small>
+                Created by {node.authorName[0].name} on {node.date}
+              </small>
+                <Img style={containerStyle} fixed={node.image.fixed} />
               </div>
             </Link>
             <div>
               <br />
               <br />
-              {node.content.content}
+              {node.previewContent.previewContent}
               <br />
               <br />
-              <small>
-                Created by {node.authorName[0].name} on {node.date}
-              </small>
+              <Button>Read More</Button>
+              <br />
+              <br />
+              <hr></hr>
+              
             </div>
           </div>
         ))}
