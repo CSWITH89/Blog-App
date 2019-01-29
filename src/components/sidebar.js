@@ -3,13 +3,18 @@ import {StaticQuery, graphql, Link } from 'gatsby';
 
 
 const sidebarStyle = {
-    'text-decoration': 'none',
+    
     'margin-top':'430px',
     padding: '10px',
     width: '400px',
-    border: '2px solid black',
+    'background-color': '#B19CD9',
     float: 'right'
   };
+
+  const linkStyle = {
+    'text-decoration': 'none'
+  };
+
 
 export default () => (
     <StaticQuery
@@ -33,7 +38,7 @@ export default () => (
               <div key={node.id}>
               
               <br/>
-                <Link to={node.slug}>
+                <Link style={linkStyle} to={node.slug}>
                   <div>{node.title}<span> - </span>{node.date}</div>
                 </Link>
                 <br/>

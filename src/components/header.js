@@ -2,7 +2,12 @@ import React, { Fragment } from 'react'
 import { graphql, StaticQuery, Link } from 'gatsby'
 import Img from 'gatsby-image'
 
-
+const headerStyle = {
+    
+  'background-color': '#B19CD9',
+  height: '50px'
+  
+};
 
 export default props => (
   <StaticQuery
@@ -18,7 +23,7 @@ export default props => (
             name
             href
             icon {
-              fixed(width: 80, height: 80) {
+              fixed(width: 40, height: 40) {
                 base64
                 tracedSVG
                 aspectRatio
@@ -40,7 +45,7 @@ export default props => (
     `}
     render={data => (
       <Fragment>
-        <div>
+        <div style={headerStyle}>
           {' '}
           <Link to="/">
             <Img fixed={data.contentfulHeader.home.icon.fixed} />
