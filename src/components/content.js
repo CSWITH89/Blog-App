@@ -13,11 +13,11 @@ const linkStyle = {
     'text-decoration': 'none'
   };
 
-export default () => (
+export default props => (
   <StaticQuery
     query={graphql`
       query BlogPosts {
-        filteredByLatest: allContentfulBlogPost(
+        props: allContentfulBlogPost(
           sort: { fields: [createdAt], order: DESC }
         ) {
           edges {
@@ -51,12 +51,45 @@ export default () => (
             }
           }
         }
+
+        filteredByOldest: allContentfulBlogPost(
+          sort: { fields: [createdAt], order: ASC }
+        ) {
+          edges {
+            node {
+              createdAt
+              title
+              date(formatString: "Do MMMM YYYY")
+              content {
+                content
+              }
+              image {
+                fixed {
+                  base64
+                  tracedSVG
+                  aspectRatio
+                  width
+                  height
+                  src
+                  srcSet
+                  srcWebp
+                  srcSetWebp
+                }
+              }
+              authorName {
+                name
+              }
+              slug
+            }
+          }
+        }
       }
     `}
-    
     render={data => (
       <div>
-        {data.filteredByLatest.edges.map(({ node }) => (
+        {console.log(data[props])}
+        {console.log(data.filteredByOldest)}
+        {data.filteredByOldest.edges.map(({ node }) => (
           <div key={node.id}>
             <Link style={linkStyle} to={node.slug}>
               <div>

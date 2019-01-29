@@ -20,26 +20,25 @@ export class SimpleDropdown extends React.Component {
         hidden: !this.state.hidden,
       });
   }
+
+  changeQuery() {
+    
+  }
  
   render() {
     const { hidden } = this.state;
-    return (
-      <Dropdown>
-      <br></br>
-        <Button
-          secondary
-          dropdownToggle
-          onClick={() => this.handleOpenCloseDropdown()}
-        >
-          Dropdown Button
+    return <Dropdown>
+        <br />
+        <Button secondary dropdownToggle onClick={() => this.handleOpenCloseDropdown()}>
+          SORT POSTS
         </Button>
         <DropdownMenu hidden={hidden}>
-          <DropdownItem>Action</DropdownItem>
-          <DropdownItem>Another action</DropdownItem>
-          <DropdownItem>Something else here</DropdownItem>
+          <DropdownItem  path="/hello">
+           Sort Posts by Newest
+          </DropdownItem>
+          <DropdownItem>Sort Posts by Oldest</DropdownItem>
         </DropdownMenu>
       </Dropdown>
-    );
   }
 };
 
