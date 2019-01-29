@@ -22,14 +22,15 @@ export default props => (
         ) {
           edges {
             node {
+              previewContent {
+                previewContent
+              }
+
               createdAt
               title
               date(formatString: "Do MMMM YYYY")
               content {
                 content
-              }
-              previewContent {
-                previewContent
               }
               image {
                 fixed(height: 200) {
@@ -89,6 +90,7 @@ export default props => (
       <div>
         {console.log(data[props])}
         {console.log(data.filteredByNewest)}
+        {/* Change value of filteredByOldest pleeaseeeee */}
         {data.filteredByOldest.edges.map(({ node }) => (
           <div key={node.id}>
             <Link style={linkStyle} to={node.slug}>
