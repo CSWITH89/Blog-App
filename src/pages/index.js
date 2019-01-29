@@ -9,7 +9,8 @@ import Sidebar from '../components/sidebar';
 //import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-import {Alert, DropdownButton} from  'react-bootstrap';
+
+import {Badge} from  'react-bootstrap';
 
 
 
@@ -32,6 +33,9 @@ export default () => (
     <Carousel />
     <Sidebar/>
     <div style={containerStyle}>
+    <p>
+  Badges <Badge>42</Badge>
+</p>
     <Dropdown></Dropdown>
       <Content />
     </div>
