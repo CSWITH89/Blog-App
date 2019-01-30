@@ -68,7 +68,7 @@ export default props => (
                 content
               }
               image {
-                fixed {
+                fixed(height: 200) {
                   base64
                   tracedSVG
                   aspectRatio
