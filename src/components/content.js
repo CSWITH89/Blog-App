@@ -58,6 +58,9 @@ export default props => (
         ) {
           edges {
             node {
+                previewContent{
+                    previewContent
+                }
               createdAt
               title
               date(formatString: "Do MMMM YYYY")
@@ -109,7 +112,7 @@ export default props => (
               <br />
               <br />
               {/* {node.previewContent.previewContent} */}
-              {node.content.content}
+              {node.previewContent.previewContent}
               <br />
               <br />
               <Link to={node.slug}>
